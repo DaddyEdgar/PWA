@@ -15,7 +15,7 @@ include_once 'php/conexion.php';
     <!-- AJAX VERSION PARA B4-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!--App manifest -->
-    <link rel="manifest" href="app.webmanifest">
+    <!-- <link rel="manifest" href="./json/manifest.json">-->
 
     <!--Bootstrap-->
 
@@ -29,7 +29,7 @@ include_once 'php/conexion.php';
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="Index">DMI</a>
+        <a class="navbar-brand" href="index.php">DMI</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,10 +37,10 @@ include_once 'php/conexion.php';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index">Productos <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Productos <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="agregar">Agregar <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="agregar.php">Agregar <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
@@ -51,56 +51,58 @@ include_once 'php/conexion.php';
     </center>
   <div class="lds-hourglass loader" id="loader"></div>
 -->
-<br><br>
-<div class="container">
-    <div class="row">
-        <?php
-        $sql = "SELECT * FROM productos";
-        $resultado = mysqli_query($conexion, $sql);
-        foreach ($resultado as $fila) {
-        ?>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <?php
+            $sql = "SELECT * FROM productos";
+            $resultado = mysqli_query($conexion, $sql);
+            foreach ($resultado as $fila) {
+            ?>
 
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $fila['nombre'] ?></h5>
-                        <p class="card-text">Descripción: <?php echo $fila['descripcion'] ?></p>
-                        <p class="card-text">Precio <?php echo $fila['precio'] ?></p>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $fila['nombre'] ?></h5>
+                            <p class="card-text">Descripción: <?php echo $fila['descripcion'] ?></p>
+                            <p class="card-text">Precio <?php echo $fila['precio'] ?></p>
+                        </div>
                     </div>
+                    <br><br>
                 </div>
-                <br><br>
+            <?php
+            }
+            ?>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <strong>
+                    <p> What is Lorem Ipsum?</p>
+                </strong>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged. It was popularised in
+                    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.
+                </p>
             </div>
-        <?php
-        }
-        ?>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="https://st1.uvnimg.com/ff/2f/7d21710e48aabb928c2346aa6dd0/KREWELLA.jpg" class="card-img-top">
+                </div>
+            </div>
+        </div>
 
     </div>
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <strong>
-                <p> What is Lorem Ipsum?</p>
-            </strong>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type
-                specimen book. It has survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was popularised in
-                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including
-                versions of Lorem Ipsum.
-            </p>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
-                <img src="https://st1.uvnimg.com/ff/2f/7d21710e48aabb928c2346aa6dd0/KREWELLA.jpg" class="card-img-top">
-            </div>
-        </div>
-    </div>
+       
+   
+   <script src="js/app.js"></script>
+    <script src="sw.js"></script>
+    <script src="rsw.js"></script>
+</body>
 
-</div>
-<script src="js/app.js"></script>
-<script src="sw.js"></script>
-
-<?php
-include_once 'global/pie.php';
-?>
+</html>

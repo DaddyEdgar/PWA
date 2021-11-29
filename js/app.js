@@ -1,5 +1,8 @@
 /*
 if (window.caches) {
+
+
+
     caches.open('Caches de paginas').then(cache => {
         cache.addAll([
             'PWA/inicio.html',
@@ -14,11 +17,13 @@ if (window.caches) {
         console.log('Cache cargado');
     });
     console.log('Cache cargado');
+   
 }
-
 */
 
+
 // Archivo: C:\xampp\htdocs\pwa4\sw.js
+
 if (window.caches) {
     var nombreCache = 'lol';
     self.addEventListener(
@@ -30,9 +35,14 @@ if (window.caches) {
                     cache => {
                         cache.addAll(
                             [
-                                //'./bootstrap-5.0.2-dist/css/bootstrap.min.css',
-                                //'./img/sw.jpg'//,
-                                //'./script.js'
+                                'PWA/inicio.html',
+                                'PWA/index.php',
+                                'PWA/js/editar.js',
+                                'PWA/js/app.js',
+                                'PWA/js/enviar.js',
+                                'PWA/js/validar.js',
+                                'PWA/agregar.php',
+                                'PWA/sw.js'
                             ]
                         );
                     }

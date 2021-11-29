@@ -1,4 +1,4 @@
-
+/*
 .loader{
     background: #000;
     width: 100%;
@@ -13,7 +13,7 @@
     clip-path: circle(110% at 100% 0);
     transition: clip-path 2s ease-in-out;
     /*
-    text-align: center;*/
+    text-align: center;*
     
     
 }
@@ -56,3 +56,4 @@
         transform: rotate(1800deg);
     }
 }
+*/
